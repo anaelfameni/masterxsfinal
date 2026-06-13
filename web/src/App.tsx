@@ -57,6 +57,7 @@ export default function App() {
         <Route path="/knowledge/roadmap" element={<Roadmap />} />
         <Route path="/knowledge/commandments" element={<Commandments />} />
         <Route path="/file/*" element={<FileViewer />} />
+        <Route path="/knowledge/file/*" element={<FileViewer />} />
         {/* Outils */}
         <Route path="/tools/idea-analyzer" element={<IdeaAnalyzerLanding />} />
         <Route path="/tools/idea-analyzer/new" element={<IdeaAnalyzerWizard />} />
