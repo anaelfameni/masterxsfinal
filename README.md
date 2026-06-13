@@ -1,53 +1,47 @@
-# MasterXS
+# MasterXS — Project Manager Personnel Intelligent
 
-> Système d'exploitation personnel + futur mentor IA spécialisé business SaaS.
+MasterXS est un **cockpit d'exécution local-first** pour entrepreneur qui gère
+plusieurs projets en parallèle. Il transforme un portefeuille chaotique en une
+file d'exécution priorisée.
 
-## Qu'est-ce que MasterXS ?
+> Promesse : à tout instant, répondre en moins de 30 secondes à « quoi faire
+> maintenant, pourquoi, et qu'est-ce que ça débloque ».
 
-MasterXS est un projet en 3 phases :
+## L'application web (`web/`)
 
-1. **Phase 1 — Playbook personnel (mois 1-6)** : système Markdown + Git versionné, 100% gratuit. Objectif : 1er SaaS rentable ($5K MRR).
-2. **Phase 2 — Outils assistants (mois 6-18)** : CLI/scripts qui automatisent scoring d'idées, extraction de vidéos, génération de specs.
-3. **Phase 3 — MasterXS comme produit (année 2+)** : mentor IA SaaS / agent multi-spécialités, basé sur le playbook prouvé.
+Stack : **Vite + React 18 + TypeScript + Tailwind**. Aucune base de données,
+aucun backend : tout vit en **localStorage** sur ton appareil.
 
-## Document principal
-
-👉 **[MASTERXS-PLAYBOOK.md](./MASTERXS-PLAYBOOK.md)** — le playbook complet (16 sections, ~1700 lignes).
-
-Source unique de vérité. Versionnée. À enrichir au fil des cycles.
-
-## Contraintes Phase 1
-
-- **100% gratuit** : free tier / open source uniquement (sauf domaine ~$10/an)
-- **Markdown + Git d'abord**, Notion plus tard si besoin visuel
-- **Workflow IA-augmenté** avec free tiers : Claude.ai, Gemini, Groq, Continue.dev, yt-dlp + whisper local
-
-## Comment démarrer
-
-Voir section 11 du playbook : **Roadmap 6 semaines — boot du playbook**.
-
-```
-Semaine 1 — Skeleton + OS personnel
-Semaine 2 — Cluster C1 Mindset (4 vidéos Hormozi)
-Semaine 3 — Cluster C2 PMF & Validation
-Semaine 4 — Cluster C3 Build IA
-Semaine 5 — Cluster C4 Sales & Acquisition
-Semaine 6 — Cluster C5 Scaling + premier vrai test du playbook
+```bash
+cd web
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # build de production
 ```
 
-## Discipline non-négociable
+### Fonctionnalités
 
-1. **Markdown + Git** en primaire (jamais Notion en premier)
-2. **Problème-first**, pas tool-first
-3. **Gates avant scoring, scoring avant build, validation avant code**
-4. **Pas d'amélioration playbook >4h/semaine** avant 1er SaaS rentable
-5. **Le playbook est versionné comme du code, parce que c'en est**
+- **NOW** — briefing du matin : bloquants, prochaine action P1, projets à
+  risque, victoires, métriques, graphiques (MRR, objectifs) et bouton
+  **Analyse Chief of Staff**.
+- **Projets** — portefeuille avec règles d'arbitrage (1 P1, 2 P2 max), santé
+  auto (stagnation 7j), détail par projet (aperçu, tâches Liste + **Kanban**,
+  décisions, journal, finances).
+- **Tâches, Objectifs (OKR), Décisions (ADR), Idées, Journal, Notes, Réunions,
+  Habitudes, Finances** — les 10 entités du PM.
+- **BusinessGPT** — mentor IA (Groq) avec 7 modes : Mentor, Startup, SaaS,
+  Marketing, Vente, IA, Investisseur.
+- **Analyseur d'idées** — score une idée de business et la convertit en projet.
+- **Thème clair / sombre** (sombre par défaut), **export / import JSON**.
 
-## Status
+### BusinessGPT (IA, gratuit)
 
-- **v1.0 (2026-05-11)** : version initiale du playbook
-- À venir : scaffolding de la structure de dossiers L0-L7
+BusinessGPT utilise l'API **Groq** (gratuite). Crée une clé sur
+[console.groq.com](https://console.groq.com), puis colle-la dans **Réglages**.
+La clé reste **uniquement** sur ton appareil. Sans clé, le Chief of Staff
+fonctionne en mode hors ligne (analyse déterministe).
 
-## Sources
+## Le playbook (Markdown)
 
-14+ sources web validées + 23 vidéos YouTube à intégrer (voir Annexes A et B du playbook).
+La base de connaissance business reste disponible dans la section **Knowledge**
+de l'app et dans les dossiers Markdown du dépôt.
