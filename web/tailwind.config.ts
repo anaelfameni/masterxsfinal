@@ -6,27 +6,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Surfaces — pure black premium tech
+        // Surfaces — pilotées par variables CSS (thème clair/sombre)
         bg: {
-          DEFAULT: '#000000',
-          deep: '#000000',
-          surface: '#0a0a0a',
-          elevated: '#111111',
-          overlay: '#171717',
+          DEFAULT: 'var(--mxs-bg)',
+          deep: 'var(--mxs-bg)',
+          surface: 'var(--mxs-bg-surface)',
+          elevated: 'var(--mxs-bg-elevated)',
+          overlay: 'var(--mxs-bg-overlay)',
         },
         // Borders
         border: {
-          DEFAULT: '#1a1a1a',
-          subtle: '#141414',
-          strong: '#262626',
+          DEFAULT: 'var(--mxs-border)',
+          subtle: 'var(--mxs-border-subtle)',
+          strong: 'var(--mxs-border-strong)',
           accent: '#7c3aed',
         },
         // Text
         fg: {
-          DEFAULT: '#fafafa',
-          muted: '#a1a1aa',
-          subtle: '#71717a',
-          faint: '#52525b',
+          DEFAULT: 'var(--mxs-fg)',
+          muted: 'var(--mxs-fg-muted)',
+          subtle: 'var(--mxs-fg-subtle)',
+          faint: 'var(--mxs-fg-faint)',
         },
         // Violet accent system
         accent: {

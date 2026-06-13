@@ -9,6 +9,17 @@
 @layer base {
   :root {
     color-scheme: dark;
+    --mxs-bg: #000000;
+    --mxs-bg-surface: #0a0a0a;
+    --mxs-bg-elevated: #111111;
+    --mxs-bg-overlay: #171717;
+    --mxs-border: #1a1a1a;
+    --mxs-border-subtle: #141414;
+    --mxs-border-strong: #262626;
+    --mxs-fg: #fafafa;
+    --mxs-fg-muted: #a1a1aa;
+    --mxs-fg-subtle: #71717a;
+    --mxs-fg-faint: #52525b;
   }
 
   /* Thème clair : redéfinit les tokens de couleur via les variables Tailwind. */
