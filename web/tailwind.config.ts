@@ -6,27 +6,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Surfaces — pilotées par variables CSS (thème clair/sombre)
+        // Surfaces — pilotées par variables CSS (thème clair/sombre), opacité supportée
         bg: {
-          DEFAULT: 'var(--mxs-bg)',
-          deep: 'var(--mxs-bg)',
-          surface: 'var(--mxs-bg-surface)',
-          elevated: 'var(--mxs-bg-elevated)',
-          overlay: 'var(--mxs-bg-overlay)',
+          DEFAULT: 'rgb(var(--mxs-bg) / <alpha-value>)',
+          deep: 'rgb(var(--mxs-bg) / <alpha-value>)',
+          surface: 'rgb(var(--mxs-bg-surface) / <alpha-value>)',
+          elevated: 'rgb(var(--mxs-bg-elevated) / <alpha-value>)',
+          overlay: 'rgb(var(--mxs-bg-overlay) / <alpha-value>)',
         },
         // Borders
         border: {
-          DEFAULT: 'var(--mxs-border)',
-          subtle: 'var(--mxs-border-subtle)',
-          strong: 'var(--mxs-border-strong)',
+          DEFAULT: 'rgb(var(--mxs-border) / <alpha-value>)',
+          subtle: 'rgb(var(--mxs-border-subtle) / <alpha-value>)',
+          strong: 'rgb(var(--mxs-border-strong) / <alpha-value>)',
           accent: '#7c3aed',
         },
         // Text
         fg: {
-          DEFAULT: 'var(--mxs-fg)',
-          muted: 'var(--mxs-fg-muted)',
-          subtle: 'var(--mxs-fg-subtle)',
-          faint: 'var(--mxs-fg-faint)',
+          DEFAULT: 'rgb(var(--mxs-fg) / <alpha-value>)',
+          muted: 'rgb(var(--mxs-fg-muted) / <alpha-value>)',
+          subtle: 'rgb(var(--mxs-fg-subtle) / <alpha-value>)',
+          faint: 'rgb(var(--mxs-fg-faint) / <alpha-value>)',
         },
         // Violet accent system
         accent: {

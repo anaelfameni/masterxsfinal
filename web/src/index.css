@@ -9,33 +9,34 @@
 @layer base {
   :root {
     color-scheme: dark;
-    --mxs-bg: #000000;
-    --mxs-bg-surface: #0a0a0a;
-    --mxs-bg-elevated: #111111;
-    --mxs-bg-overlay: #171717;
-    --mxs-border: #1a1a1a;
-    --mxs-border-subtle: #141414;
-    --mxs-border-strong: #262626;
-    --mxs-fg: #fafafa;
-    --mxs-fg-muted: #a1a1aa;
-    --mxs-fg-subtle: #71717a;
-    --mxs-fg-faint: #52525b;
+    /* Triplets RGB (sans rgb()) pour permettre les modificateurs d'opacité Tailwind. */
+    --mxs-bg: 0 0 0;
+    --mxs-bg-surface: 10 10 10;
+    --mxs-bg-elevated: 17 17 17;
+    --mxs-bg-overlay: 23 23 23;
+    --mxs-border: 26 26 26;
+    --mxs-border-subtle: 20 20 20;
+    --mxs-border-strong: 38 38 38;
+    --mxs-fg: 250 250 250;
+    --mxs-fg-muted: 161 161 170;
+    --mxs-fg-subtle: 113 113 122;
+    --mxs-fg-faint: 82 82 91;
   }
 
-  /* Thème clair : redéfinit les tokens de couleur via les variables Tailwind. */
+  /* Thème clair : redéfinit les tokens de couleur. */
   html.light {
     color-scheme: light;
-    --mxs-bg: #fafafa;
-    --mxs-bg-surface: #ffffff;
-    --mxs-bg-elevated: #f4f4f5;
-    --mxs-bg-overlay: #e4e4e7;
-    --mxs-border: #e4e4e7;
-    --mxs-border-subtle: #efeff1;
-    --mxs-border-strong: #d4d4d8;
-    --mxs-fg: #18181b;
-    --mxs-fg-muted: #52525b;
-    --mxs-fg-subtle: #71717a;
-    --mxs-fg-faint: #a1a1aa;
+    --mxs-bg: 250 250 250;
+    --mxs-bg-surface: 255 255 255;
+    --mxs-bg-elevated: 244 244 245;
+    --mxs-bg-overlay: 228 228 231;
+    --mxs-border: 228 228 231;
+    --mxs-border-subtle: 239 239 241;
+    --mxs-border-strong: 212 212 216;
+    --mxs-fg: 24 24 27;
+    --mxs-fg-muted: 82 82 91;
+    --mxs-fg-subtle: 113 113 122;
+    --mxs-fg-faint: 161 161 170;
   }
 
   html {
