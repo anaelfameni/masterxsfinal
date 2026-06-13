@@ -11,6 +11,22 @@
     color-scheme: dark;
   }
 
+  /* Thème clair : redéfinit les tokens de couleur via les variables Tailwind. */
+  html.light {
+    color-scheme: light;
+    --mxs-bg: #fafafa;
+    --mxs-bg-surface: #ffffff;
+    --mxs-bg-elevated: #f4f4f5;
+    --mxs-bg-overlay: #e4e4e7;
+    --mxs-border: #e4e4e7;
+    --mxs-border-subtle: #efeff1;
+    --mxs-border-strong: #d4d4d8;
+    --mxs-fg: #18181b;
+    --mxs-fg-muted: #52525b;
+    --mxs-fg-subtle: #71717a;
+    --mxs-fg-faint: #a1a1aa;
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
