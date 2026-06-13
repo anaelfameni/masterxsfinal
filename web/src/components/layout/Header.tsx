@@ -1,25 +1,26 @@
-import { Menu, Github, Search } from 'lucide-react'
+import { Menu } from 'lucide-react'
 import { useLocation, Link } from 'react-router-dom'
 import { useMemo } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 interface HeaderProps {
   onMenuClick: () => void
 }
 
+const labels: Record<string, string> = {
+  projects: 'Projets', tasks: 'Tâches', objectives: 'Objectifs',
+  decisions: 'Décisions', ideas: 'Idées', businessgpt: 'BusinessGPT',
+  journal: 'Journal', notes: 'Notes', meetings: 'Réunions',
+  habits: 'Habitudes', finances: 'Finances', knowledge: 'Knowledge',
+  settings: 'Réglages', tools: 'Outils', 'idea-analyzer': 'Analyseur d\'idées',
+  'idea-scorer': 'Scoring', new: 'Nouveau', result: 'Résultat',
+  modules: 'Modules', file: 'Fichier', roadmap: 'Roadmap', commandments: 'Commandements',
+  playbook: 'Playbook',
+}
+
 function getBreadcrumb(pathname: string): { label: string; to?: string }[] {
   const segments = pathname.split('/').filter(Boolean)
-  if (segments.length === 0) return [{ label: 'Dashboard' }]
-
-  const labels: Record<string, string> = {
-    playbook: 'Playbook',
-    modules: 'Modules',
-    file: 'Fichier',
-    tools: 'Tools',
-    'idea-scorer': 'Idea Scorer',
-    roadmap: 'Roadmap',
-    commandments: '20 Commandements',
-  }
-
+  if (segments.length === 0) return [{ label: 'NOW' }]
   return segments.map((seg, idx) => ({
     label: labels[seg] || decodeURIComponent(seg),
     to: idx < segments.length - 1 ? '/' + segments.slice(0, idx + 1).join('/') : undefined,
@@ -36,12 +37,11 @@ export default function Header({ onMenuClick }: HeaderProps) {
         <button
           onClick={onMenuClick}
           className="lg:hidden p-2 -ml-2 rounded-md hover:bg-bg-elevated text-fg-muted shrink-0"
-          aria-label="Open menu"
+          aria-label="Ouvrir le menu"
         >
           <Menu className="w-5 h-5" />
         </button>
 
-        {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm min-w-0 overflow-hidden">
           {crumbs.map((c, idx) => (
             <span key={idx} className="flex items-center gap-2 min-w-0">
@@ -62,30 +62,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
       </div>
 
       <div className="flex items-center gap-2 shrink-0">
-        <button
-          className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-bg-elevated border border-border text-fg-subtle text-sm hover:border-border-strong hover:text-fg-muted transition-all"
-          onClick={() => {
-            const input = document.querySelector<HTMLInputElement>('input[data-search]')
-            input?.focus()
-          }}
-          title="Search (soon)"
-        >
-          <Search className="w-3.5 h-3.5" />
-          <span>Search</span>
-          <kbd className="ml-2 px-1.5 py-0.5 rounded text-2xs font-mono bg-bg-overlay border border-border-strong text-fg-faint">
-            ⌘K
-          </kbd>
-        </button>
-
-        <a
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-2 rounded-md hover:bg-bg-elevated text-fg-muted hover:text-fg transition-colors"
-          aria-label="GitHub"
-        >
-          <Github className="w-4 h-4" />
-        </a>
+        <ThemeToggle />
       </div>
     </header>
   )
