@@ -14,7 +14,7 @@ export default function ModuleDetail() {
     return (
       <div className="card p-8 text-center">
         <p className="text-fg-muted">Module introuvable.</p>
-        <Link to="/modules" className="mt-4 inline-flex items-center gap-2 text-accent-300 hover:underline">
+        <Link to="/knowledge/modules" className="mt-4 inline-flex items-center gap-2 text-accent-300 hover:underline">
           <ArrowLeft className="w-4 h-4" /> Retour aux modules
         </Link>
       </div>
@@ -38,7 +38,7 @@ export default function ModuleDetail() {
   return (
     <div className="space-y-8">
       <Link
-        to="/modules"
+        to="/knowledge/modules"
         className="inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-accent-300 transition-colors"
       >
         <ArrowLeft className="w-3.5 h-3.5" />
@@ -126,7 +126,7 @@ export default function ModuleDetail() {
                   {byFolder[folder].map((f, idx) => (
                     <Link
                       key={f.path}
-                      to={`/file/${f.path}`}
+                      to={`/knowledge/file/${f.path}`}
                       className={cn(
                         'group flex items-center gap-3 px-4 py-3 hover:bg-bg-elevated transition-colors',
                         idx > 0 && 'border-t border-border-subtle'

@@ -38,7 +38,7 @@ export default function Modules() {
               transition={{ duration: 0.4, delay: idx * 0.04 }}
             >
               <Link
-                to={`/modules/${m.slug}`}
+                to={`/knowledge/modules/${m.slug}`}
                 className="group card card-hover p-6 h-full flex flex-col"
               >
                 {/* Top */}
